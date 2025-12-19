@@ -12,9 +12,9 @@ function QR1() {
         height: "100vh",
       }}
     >
-      <div>5/6</div>
-      <div>You have found a treasure</div>
-      <div>Your next clue:</div>
+      <div>okay,</div>
+      <div>Here is your first clue:</div>
+      audio
       <div>Clue text</div>
     </div>
   );

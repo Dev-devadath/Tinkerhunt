@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Start from './pages/Start';
+import Rules from './pages/Rules';
 import QR1 from './pages/QR1';
 import QR2 from './pages/QR2';
 import QR3 from './pages/QR3';
@@ -12,6 +13,7 @@ import QR8 from './pages/QR8';
 import QR9 from './pages/QR9';
 import QR10 from './pages/QR10';
 import Rickroll from './pages/Rickroll';
+import NoCheat from './pages/NoCheat';
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/start" element={<Start />} />
+        <Route path="/rules" element={<Rules />} />
         <Route path="/t1nk" element={<QR1 />} />
         <Route path="/2rhb" element={<QR2 />} />
         <Route path="/t3nk" element={<QR3 />} />
@@ -30,7 +33,8 @@ function App() {
         <Route path="/nou9" element={<QR9 />} />
         <Route path="/la10" element={<QR10 />} />
         <Route path="/w7t3" element={<Rickroll />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/nocheat" element={<NoCheat />} />
+        <Route path="/" element={<Start />} />
       </Routes>
     </Router>
   );

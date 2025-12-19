@@ -122,7 +122,7 @@ function Start() {
           href="#"
           onClick={(e) => {
             e.preventDefault();
-            // Add your rules/faq navigation or modal here
+            navigate("/rules");
           }}
           style={{
             fontSize: "14px",

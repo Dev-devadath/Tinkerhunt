@@ -15,6 +15,30 @@ function QR5() {
   const fullVideoText = 'Here is your next clue';
 
   useEffect(() => {
+    // Check if previous page was visited
+    const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages') || '[]');
+    
+    if (!visitedPages.includes('QR4')) {
+      // Redirect to no cheat page if QR4 wasn't visited
+      navigate('/nocheat');
+      return;
+    }
+    
+    // Track page visit
+    const pageName = 'QR5';
+    
+    if (!visitedPages.includes(pageName)) {
+      visitedPages.push(pageName);
+      sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+    }
+    
+    // Log all visited pages to console
+    console.log('=== Visited Pages ===');
+    console.log(visitedPages);
+    console.log('=====================');
+  }, [navigate]);
+
+  useEffect(() => {
     let index1 = 0;
     const timer1 = setInterval(() => {
       if (index1 < fullText1.length) {

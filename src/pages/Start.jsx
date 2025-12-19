@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import logo from "../../logo.png";
 
 function Start() {
   const navigate = useNavigate();
@@ -96,6 +97,15 @@ function Start() {
           zIndex: 1,
         }}
       >
+        <img
+          src={logo}
+          alt="Tinker Hunt Logo"
+          style={{
+            width: "150px",
+            height: "auto",
+            marginBottom: "20px",
+          }}
+        />
         <h1
           style={{
             fontSize: "48px",

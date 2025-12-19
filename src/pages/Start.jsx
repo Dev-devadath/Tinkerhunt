@@ -85,6 +85,53 @@ function Start() {
         overflow: "hidden",
       }}
     >
+      <div
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          textAlign: "center",
+          pointerEvents: "none",
+          zIndex: 1,
+        }}
+      >
+        <h1
+          style={{
+            fontSize: "48px",
+            fontWeight: "bold",
+            margin: 0,
+            marginBottom: "20px",
+            fontFamily: "Courier New",
+            color: "#000",
+          }}
+        >
+          Welcome to Treasure Hunt!!
+        </h1>
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            // Add your rules/faq navigation or modal here
+          }}
+          style={{
+            fontSize: "14px",
+            color: "#0066cc",
+            textDecoration: "none",
+            pointerEvents: "auto",
+            cursor: "pointer",
+            fontFamily: "Courier New",
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.textDecoration = "underline";
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.textDecoration = "none";
+          }}
+        >
+          rules/faq
+        </a>
+      </div>
       <button
         onClick={() => navigate("/t1nk")}
         style={{
@@ -100,6 +147,7 @@ function Start() {
           cursor: "pointer",
           padding: "10px 20px",
           transition: "left 0.1s linear, top 0.1s linear",
+          zIndex: 2,
         }}
       >
         start :)

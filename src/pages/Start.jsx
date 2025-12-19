@@ -1,13 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Start() {
+  const navigate = useNavigate();
+
   return (
     <div
       style={{
-        fontFamily: "Courier New",
-        fontSize: "24px",
-        fontWeight: "bold",
-        color: "#000",
         backgroundColor: "white",
         display: "flex",
         justifyContent: "center",
@@ -15,7 +14,21 @@ function Start() {
         height: "100vh",
       }}
     >
-      start
+      <button
+        onClick={() => navigate("/t1nk")}
+        style={{
+          fontFamily: "Courier New",
+          fontSize: "24px",
+          fontWeight: "bold",
+          color: "#000",
+          backgroundColor: "white",
+          border: "none",
+          cursor: "pointer",
+          padding: "10px 20px",
+        }}
+      >
+        start :)
+      </button>
     </div>
   );
 }

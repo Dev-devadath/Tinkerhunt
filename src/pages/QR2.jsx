@@ -1,13 +1,20 @@
 import React from 'react';
-import TreasureCard from '../components/TreasureCard';
 
 function QR2() {
   return (
-    <TreasureCard 
-      count={1}
-      total={10}
-      clueText="/assets/clue-patient-worker.png"
-    />
+    <div style={{ 
+      backgroundColor: 'white',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh'
+    }}>
+      <div>1/10</div>
+      <div>You have found a treasure</div>
+      <div>Your next clue:</div>
+      <div>Clue text</div>
+    </div>
   );
 }
 

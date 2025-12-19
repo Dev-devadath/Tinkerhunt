@@ -14,8 +14,6 @@
 .counter {
   position: absolute;
   top: 80px;
-  left: 50%;
-  transform: translateX(-50%);
   font-size: 48px;
   font-weight: bold;
   color: #000;
@@ -31,7 +29,6 @@
   padding: 60px 40px 40px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   z-index: 5;
-  margin-top: 60px;
 }
 
 .found-message {
@@ -40,12 +37,8 @@
 }
 
 .found-text {
-  font-size: 24px;
-  font-weight: bold;
-  color: #000;
-  line-height: 1.4;
-  text-align: center;
-  margin: 0;
+  max-width: 100%;
+  height: auto;
 }
 
 .clue-board {
@@ -76,29 +69,18 @@
 }
 
 .clue-header {
-  font-size: 20px;
-  font-weight: bold;
-  color: #000;
-  text-align: center;
-  margin-bottom: 25px;
-  line-height: 1.4;
-  position: relative;
-  z-index: 1;
+  max-width: 100%;
+  margin-bottom: 20px;
+  display: block;
 }
 
 .clue-content {
   text-align: center;
-  position: relative;
-  z-index: 1;
 }
 
 .clue-text {
-  font-size: 18px;
-  color: #000;
-  line-height: 1.8;
-  white-space: pre-line;
-  text-align: center;
-  margin: 0;
+  max-width: 100%;
+  height: auto;
 }
 
 .foliage-top,
@@ -139,27 +121,12 @@
 @media (max-width: 768px) {
   .counter {
     top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
     font-size: 36px;
   }
 
   .content-area {
     width: 90%;
     padding: 40px 20px 20px;
-    margin-top: 40px;
-  }
-
-  .found-text {
-    font-size: 20px;
-  }
-
-  .clue-header {
-    font-size: 18px;
-  }
-
-  .clue-text {
-    font-size: 16px;
   }
 
   .clue-board {

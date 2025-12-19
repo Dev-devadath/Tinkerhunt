@@ -1,27 +1,31 @@
-import React from 'react';
-import './TreasureCard.css';
+import React from "react";
+import "./TreasureCard.css";
 
 function TreasureCard({ count, total, clueText }) {
   return (
     <div className="treasure-container">
-      <div className="counter">{count}/{total}</div>
-      
+      <div className="counter">
+        {count}/{total}
+      </div>
+
       <div className="content-area">
         <div className="found-message">
-          <div className="found-text">
-            You have found the first tressure
-          </div>
+          <img
+            src="/assets/found-treasure.png"
+            alt="You have found a tressure"
+            className="found-text"
+          />
         </div>
 
         <div className="clue-board">
-          <div className="clue-header">
-            you next clue:
-          </div>
-          
+          <img
+            src="/assets/next-clue.png"
+            alt="your next clue:"
+            className="clue-header"
+          />
+
           <div className="clue-content">
-            <div className="clue-text">
-              {clueText}
-            </div>
+            <img src={clueText} alt="Clue text" className="clue-text" />
           </div>
         </div>
       </div>
@@ -40,4 +44,3 @@ function TreasureCard({ count, total, clueText }) {
 }
 
 export default TreasureCard;
-

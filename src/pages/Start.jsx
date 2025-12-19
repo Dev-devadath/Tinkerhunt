@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 function Start() {
   const navigate = useNavigate();
   const [position, setPosition] = useState({
-    x: window.innerWidth / 2 - 75,
-    y: window.innerHeight / 2 - 25,
+    x: typeof window !== "undefined" ? window.innerWidth / 2 - 75 : 0,
+    y: typeof window !== "undefined" ? window.innerHeight / 2 - 25 : 0,
   });
   const velocityRef = useRef({
     vx: (Math.random() - 0.5) * 2,
@@ -14,7 +14,17 @@ function Start() {
   const animationFrameRef = useRef();
 
   useEffect(() => {
+    // Initialize position on mount
+    if (typeof window !== "undefined") {
+      setPosition({
+        x: window.innerWidth / 2 - 75,
+        y: window.innerHeight / 2 - 25,
+      });
+    }
+
     const animate = () => {
+      if (typeof window === "undefined") return;
+
       setPosition((prevPos) => {
         const maxX = window.innerWidth - 150;
         const maxY = window.innerHeight - 50;

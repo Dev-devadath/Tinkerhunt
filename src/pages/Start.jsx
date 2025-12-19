@@ -106,7 +106,7 @@ function Start() {
             color: "#000",
           }}
         >
-          Welcome to Treasure Hunt!!
+          Welcome to Tinker Hunt!!
         </h1>
         <a
           href="#"

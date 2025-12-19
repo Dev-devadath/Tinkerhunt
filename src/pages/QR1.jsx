@@ -8,7 +8,7 @@ function QR1() {
 
   const fullText1 = "okay,";
   const fullText2 = "Here is your first clue:";
-  const fullText3 = "good luck ;)";
+  const fullText3 = "I hope you wont make it to the end ;)";
 
   useEffect(() => {
     let index1 = 0;
@@ -65,7 +65,9 @@ function QR1() {
         fontFamily: "monospace",
       }}
     >
-      <div style={{ fontSize: "24px", marginBottom: "20px", minHeight: "30px" }}>
+      <div
+        style={{ fontSize: "24px", marginBottom: "20px", minHeight: "30px" }}
+      >
         {text1}
         {text1.length > 0 && text1.length < fullText1.length && (
           <span
@@ -77,7 +79,9 @@ function QR1() {
           </span>
         )}
       </div>
-      <div style={{ fontSize: "20px", marginBottom: "30px", minHeight: "30px" }}>
+      <div
+        style={{ fontSize: "20px", marginBottom: "30px", minHeight: "30px" }}
+      >
         {text2}
         {text2.length > 0 && text2.length < fullText2.length && (
           <span
@@ -99,7 +103,10 @@ function QR1() {
             animation: "fadeIn 0.5s ease-in",
           }}
         >
-          <source src="/Pipline University Colony 4 (1).mp3" type="audio/mpeg" />
+          <source
+            src="/Pipline University Colony 4 (1).mp3"
+            type="audio/mpeg"
+          />
           Your browser does not support the audio element.
         </audio>
       )}

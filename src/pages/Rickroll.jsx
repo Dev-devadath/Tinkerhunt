@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Rickroll() {
   const [stage, setStage] = useState(1); // 1: loading text, 2: fade out, 3: loading again, 4: show content
@@ -30,35 +31,45 @@ function Rickroll() {
   }, []);
 
   return (
-    <div style={{ 
-      backgroundColor: 'white',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100vh',
-      gap: '20px'
-    }}>
+    <div
+      style={{
+        backgroundColor: "white",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        gap: "20px",
+      }}
+    >
       {stage < 4 ? (
-        <div style={{
-          fontSize: '24px',
-          opacity: fadeOut ? 0 : 1,
-          transition: 'opacity 0.5s ease-in-out'
-        }}>
+        <div
+          style={{
+            fontSize: "24px",
+            opacity: fadeOut ? 0 : 1,
+            transition: "opacity 0.5s ease-in-out",
+          }}
+        >
           loading...
         </div>
       ) : (
         <>
-          <img 
-            src="/rickroll-roll.gif" 
-            alt="Rickroll" 
-            style={{ maxWidth: '80%', maxHeight: '70vh' }}
+          <img
+            src="/rickroll-roll.gif"
+            alt="Rickroll"
+            style={{ maxWidth: "80%", maxHeight: "70vh" }}
           />
-          <div style={{ fontSize: '24px', fontWeight: 'bold' }}>
-            pattiche
-          </div>
-          <div style={{ fontSize: '18px', textAlign: 'center', marginTop: '10px' }}>
-            this qr was a decoy try fond the orginal one
+          <div style={{ fontSize: "24px", fontWeight: "bold" }}>pattiche</div>
+          <div
+            style={{ fontSize: "18px", textAlign: "center", marginTop: "10px" }}
+          >
+            this qr was a decoy try fond the orginal one{" "}
+            <Link
+              to="/start"
+              style={{ color: "#0066cc", textDecoration: "none" }}
+            >
+              here
+            </Link>
           </div>
         </>
       )}
@@ -67,4 +78,3 @@ function Rickroll() {
 }
 
 export default Rickroll;
-

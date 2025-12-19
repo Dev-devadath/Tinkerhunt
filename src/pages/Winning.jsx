@@ -20,7 +20,7 @@ function TypingText({ text, delay = 50, onComplete }) {
   return <span>{displayedText}</span>;
 }
 
-function QR7() {
+function Winning() {
   const [showSecondText, setShowSecondText] = useState(false);
   const [showThirdText, setShowThirdText] = useState(false);
   const [showFourthText, setShowFourthText] = useState(false);
@@ -134,5 +134,4 @@ function QR7() {
   );
 }
 
-export default QR7;
-
+export default Winning;

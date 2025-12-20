@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function TypingText({ text, delay = 50, onComplete }) {
   const [displayedText, setDisplayedText] = useState("");
@@ -21,10 +22,35 @@ function TypingText({ text, delay = 50, onComplete }) {
 }
 
 function QR2() {
+  const navigate = useNavigate();
   const [showSecondText, setShowSecondText] = useState(false);
   const [showThirdText, setShowThirdText] = useState(false);
   const [showButton, setShowButton] = useState(false);
   const [showFullscreen, setShowFullscreen] = useState(false);
+
+  useEffect(() => {
+    // Check if previous page was visited
+    const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages') || '[]');
+    
+    if (!visitedPages.includes('QR1')) {
+      // Redirect to no cheat page if QR1 wasn't visited
+      navigate('/nocheat');
+      return;
+    }
+    
+    // Track page visit
+    const pageName = 'QR2';
+    
+    if (!visitedPages.includes(pageName)) {
+      visitedPages.push(pageName);
+      sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+    }
+    
+    // Log all visited pages to console
+    console.log('=== Visited Pages ===');
+    console.log(visitedPages);
+    console.log('=====================');
+  }, [navigate]);
 
   return (
     <>

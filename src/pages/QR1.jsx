@@ -11,6 +11,22 @@ function QR1() {
   const fullText3 = "I hope you wont make it to the end ;)";
 
   useEffect(() => {
+    // Track page visit
+    const pageName = 'QR1';
+    const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages') || '[]');
+    
+    if (!visitedPages.includes(pageName)) {
+      visitedPages.push(pageName);
+      sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+    }
+    
+    // Log all visited pages to console
+    console.log('=== Visited Pages ===');
+    console.log(visitedPages);
+    console.log('=====================');
+  }, []);
+
+  useEffect(() => {
     let index1 = 0;
     const timer1 = setInterval(() => {
       if (index1 < fullText1.length) {

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function QR3() {
+  const navigate = useNavigate();
   const [text1, setText1] = useState('');
   const [showGif, setShowGif] = useState(false);
   const [showButton, setShowButton] = useState(false);
@@ -10,6 +12,30 @@ function QR3() {
 
   const fullText1 = 'Took you long enough';
   const fullClueText = 'The most patient worker here never asks questions, never sleeps, and never signs its work.';
+
+  useEffect(() => {
+    // Check if previous page was visited
+    const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages') || '[]');
+    
+    if (!visitedPages.includes('QR2')) {
+      // Redirect to no cheat page if QR2 wasn't visited
+      navigate('/nocheat');
+      return;
+    }
+    
+    // Track page visit
+    const pageName = 'QR3';
+    
+    if (!visitedPages.includes(pageName)) {
+      visitedPages.push(pageName);
+      sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+    }
+    
+    // Log all visited pages to console
+    console.log('=== Visited Pages ===');
+    console.log(visitedPages);
+    console.log('=====================');
+  }, [navigate]);
 
   useEffect(() => {
     let index1 = 0;

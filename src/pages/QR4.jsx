@@ -32,11 +32,11 @@ function QR4() {
     // Check if previous page was visited
     const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages') || '[]');
     
-    if (!visitedPages.includes('QR3')) {
-      // Redirect to no cheat page if QR3 wasn't visited
-      navigate('/nocheat');
-      return;
-    }
+    // if (!visitedPages.includes('QR3')) {
+    //   // Redirect to no cheat page if QR3 wasn't visited
+    //   navigate('/nocheat');
+    //   return;
+    // }
     
     // Track page visit
     const pageName = 'QR4';

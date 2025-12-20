@@ -69,87 +69,117 @@ function QR1() {
   }, []);
 
   return (
-    <div
-      style={{
-        backgroundColor: "white",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-        padding: "20px",
-        fontFamily: "monospace",
-      }}
-    >
+    <div style={{ position: "relative", minHeight: "100vh" }}>
       <div
-        style={{ fontSize: "24px", marginBottom: "20px", minHeight: "30px" }}
+        style={{
+          backgroundColor: "white",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          padding: "20px",
+          fontFamily: "monospace",
+        }}
       >
-        {text1}
-        {text1.length > 0 && text1.length < fullText1.length && (
-          <span
-            style={{
-              animation: "blink 1s infinite",
-            }}
-          >
-            |
-          </span>
-        )}
-      </div>
-      <div
-        style={{ fontSize: "20px", marginBottom: "30px", minHeight: "30px" }}
-      >
-        {text2}
-        {text2.length > 0 && text2.length < fullText2.length && (
-          <span
-            style={{
-              animation: "blink 1s infinite",
-            }}
-          >
-            |
-          </span>
-        )}
-      </div>
-      {showAudio && (
-        <audio
-          controls
-          style={{
-            marginBottom: "30px",
-            width: "100%",
-            maxWidth: "500px",
-            animation: "fadeIn 0.5s ease-in",
-          }}
+        <div
+          style={{ fontSize: "24px", marginBottom: "20px", minHeight: "30px" }}
         >
-          <source
-            src="/Pipline University Colony 4 (1).mp3"
-            type="audio/mpeg"
-          />
-          Your browser does not support the audio element.
-        </audio>
-      )}
-      <div style={{ fontSize: "20px", minHeight: "30px" }}>
-        {text3}
-        {text3.length > 0 && text3.length < fullText3.length && (
-          <span
+          {text1}
+          {text1.length > 0 && text1.length < fullText1.length && (
+            <span
+              style={{
+                animation: "blink 1s infinite",
+              }}
+            >
+              |
+            </span>
+          )}
+        </div>
+        <div
+          style={{ fontSize: "20px", marginBottom: "30px", minHeight: "30px" }}
+        >
+          {text2}
+          {text2.length > 0 && text2.length < fullText2.length && (
+            <span
+              style={{
+                animation: "blink 1s infinite",
+              }}
+            >
+              |
+            </span>
+          )}
+        </div>
+        {showAudio && (
+          <audio
+            controls
             style={{
-              animation: "blink 1s infinite",
+              marginBottom: "30px",
+              width: "100%",
+              maxWidth: "500px",
+              animation: "fadeIn 0.5s ease-in",
             }}
           >
-            |
-          </span>
+            <source
+              src="/Pipline University Colony 4 (1).mp3"
+              type="audio/mpeg"
+            />
+            Your browser does not support the audio element.
+          </audio>
         )}
+        <div style={{ fontSize: "20px", minHeight: "30px" }}>
+          {text3}
+          {text3.length > 0 && text3.length < fullText3.length && (
+            <span
+              style={{
+                animation: "blink 1s infinite",
+              }}
+            >
+              |
+            </span>
+          )}
+        </div>
+        <style>
+          {`
+            @keyframes blink {
+              0%, 50% { opacity: 1; }
+              51%, 100% { opacity: 0; }
+            }
+            @keyframes fadeIn {
+              from { opacity: 0; transform: translateY(-10px); }
+              to { opacity: 1; transform: translateY(0); }
+            }
+          `}
+        </style>
       </div>
-      <style>
-        {`
-          @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-          }
-          @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-        `}
-      </style>
+      <div
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          backgroundColor: "rgba(0, 0, 0, 0.8)",
+          color: "white",
+          padding: "15px 25px",
+          borderRadius: "8px",
+          fontFamily: "monospace",
+          fontSize: "16px",
+          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
+          zIndex: 10,
+          animation: "fadeIn 0.5s ease-in",
+          textAlign: "center",
+          maxWidth: "90%",
+          boxSizing: "border-box",
+          pointerEvents: "none",
+        }}
+      >
+        <div style={{ fontSize: "12px", marginBottom: "5px", opacity: 0.8 }}>
+          Page Code:
+        </div>
+        <div style={{ fontSize: "20px", fontWeight: "bold" }}>
+          t1nk
+        </div>
+      </div>
     </div>
   );
 }

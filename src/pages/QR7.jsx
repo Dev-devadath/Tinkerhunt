@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import CodeProtectedPage from '../components/CodeProtectedPage';
 
 function TypingText({ text, delay = 50, onComplete }) {
   const [displayedText, setDisplayedText] = useState("");
@@ -54,18 +55,19 @@ function QR7() {
   }, [navigate]);
 
   return (
-    <div
-      style={{
-        backgroundColor: "white",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-start",
-        alignItems: "center",
-        height: "100vh",
-        paddingTop: "30vh",
-        position: "relative",
-      }}
-    >
+    <CodeProtectedPage requiredCode="lsg6">
+      <div
+        style={{
+          backgroundColor: "white",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "center",
+          height: "100vh",
+          paddingTop: "30vh",
+          position: "relative",
+        }}
+      >
       <div style={{ fontSize: "24px", marginBottom: "20px" }}>
         <TypingText
           text="Congratulations!"
@@ -156,7 +158,8 @@ function QR7() {
       >
         Prizes will only be for the first 10 winners
       </div>
-    </div>
+      </div>
+    </CodeProtectedPage>
   );
 }
 

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import CodeProtectedPage from '../components/CodeProtectedPage';
 
 function QR8() {
   const navigate = useNavigate();
@@ -29,15 +30,17 @@ function QR8() {
   }, [navigate]);
 
   return (
-    <div style={{ 
-      backgroundColor: 'white',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100vh'
-    }}>
-      qr8
-    </div>
+    <CodeProtectedPage requiredCode="ja7u">
+      <div style={{ 
+        backgroundColor: 'white',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh'
+      }}>
+        qr8
+      </div>
+    </CodeProtectedPage>
   );
 }
 

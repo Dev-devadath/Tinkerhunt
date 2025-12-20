@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import CodeProtectedPage from '../components/CodeProtectedPage';
 
 function QR5() {
   const navigate = useNavigate();
@@ -83,17 +84,18 @@ function QR5() {
   };
 
   return (
-    <div style={{ 
-      backgroundColor: 'white',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      minHeight: '100vh',
-      padding: '20px',
-      textAlign: 'center',
-      fontFamily: 'monospace'
-    }}>
+    <CodeProtectedPage requiredCode="7dg4">
+      <div style={{ 
+        backgroundColor: 'white',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '100vh',
+        padding: '20px',
+        textAlign: 'center',
+        fontFamily: 'monospace'
+      }}>
       {!showVideo ? (
         <>
           <div style={{ 
@@ -208,7 +210,8 @@ function QR5() {
           }
         `}
       </style>
-    </div>
+      </div>
+    </CodeProtectedPage>
   );
 }
 

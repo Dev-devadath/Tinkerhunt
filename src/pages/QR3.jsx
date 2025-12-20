@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import CodeProtectedPage from '../components/CodeProtectedPage';
 
 function QR3() {
   const navigate = useNavigate();
@@ -78,110 +79,112 @@ function QR3() {
   };
 
   return (
-    <div style={{ 
-      backgroundColor: 'white',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100vh',
-      padding: '20px',
-      textAlign: 'center',
-      fontFamily: 'monospace'
-    }}>
-      {!showClue ? (
-        <>
-          <div style={{ 
-            fontSize: '24px', 
-            marginBottom: '30px',
-            minHeight: '30px'
-          }}>
-            {text1}
-            {text1.length > 0 && text1.length < fullText1.length && (
-              <span style={{ animation: 'blink 1s infinite' }}>|</span>
-            )}
-          </div>
-          
-          {showGif && (
-            <img 
-              src="/finally-about-time.gif" 
-              alt="Finally, about time"
-              style={{ 
-                maxWidth: '500px',
-                width: '100%',
-                marginBottom: '30px',
-                animation: 'fadeIn 0.5s ease-in'
-              }}
-            />
-          )}
-          
-          {showButton && (
-            <button
-              onClick={handleNextClue}
-              style={{
-                padding: '10px 30px',
-                fontSize: '16px',
-                backgroundColor: '#f0f0f0',
-                border: '2px outset #ddd',
-                borderRadius: '0',
-                cursor: 'pointer',
-                fontFamily: 'monospace',
-                boxShadow: '2px 2px 0px rgba(0,0,0,0.2)',
-                animation: 'fadeIn 0.5s ease-in'
-              }}
-              onMouseDown={(e) => {
-                e.currentTarget.style.border = '2px inset #ddd';
-                e.currentTarget.style.boxShadow = 'inset 1px 1px 2px rgba(0,0,0,0.2)';
-              }}
-              onMouseUp={(e) => {
-                e.currentTarget.style.border = '2px outset #ddd';
-                e.currentTarget.style.boxShadow = '2px 2px 0px rgba(0,0,0,0.2)';
-              }}
-            >
-              Next Clue
-            </button>
-          )}
-        </>
-      ) : (
-        <div style={{ maxWidth: '600px' }}>
-          <div style={{ 
-            fontSize: '20px', 
-            marginBottom: '40px',
-            lineHeight: '1.6',
-            minHeight: '30px'
-          }}>
-            {clueText}
-            {clueText.length > 0 && clueText.length < fullClueText.length && (
-              <span style={{ animation: 'blink 1s infinite' }}>|</span>
-            )}
-          </div>
-          
-          {showHint && (
-            <p style={{ 
-              fontSize: '14px',
-              color: '#666',
-              fontStyle: 'italic',
-              animation: 'fadeIn 0.5s ease-in'
+    <CodeProtectedPage requiredCode="2rhb">
+      <div style={{ 
+        backgroundColor: 'white',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        padding: '20px',
+        textAlign: 'center',
+        fontFamily: 'monospace'
+      }}>
+        {!showClue ? (
+          <>
+            <div style={{ 
+              fontSize: '24px', 
+              marginBottom: '30px',
+              minHeight: '30px'
             }}>
-              You might get your social muscles tired. That's expected.
-            </p>
-          )}
-        </div>
-      )}
-      
-      <style>
-        {`
-          @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-          }
-          @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-        `}
-      </style>
-    </div>
+              {text1}
+              {text1.length > 0 && text1.length < fullText1.length && (
+                <span style={{ animation: 'blink 1s infinite' }}>|</span>
+              )}
+            </div>
+            
+            {showGif && (
+              <img 
+                src="/finally-about-time.gif" 
+                alt="Finally, about time"
+                style={{ 
+                  maxWidth: '500px',
+                  width: '100%',
+                  marginBottom: '30px',
+                  animation: 'fadeIn 0.5s ease-in'
+                }}
+              />
+            )}
+            
+            {showButton && (
+              <button
+                onClick={handleNextClue}
+                style={{
+                  padding: '10px 30px',
+                  fontSize: '16px',
+                  backgroundColor: '#f0f0f0',
+                  border: '2px outset #ddd',
+                  borderRadius: '0',
+                  cursor: 'pointer',
+                  fontFamily: 'monospace',
+                  boxShadow: '2px 2px 0px rgba(0,0,0,0.2)',
+                  animation: 'fadeIn 0.5s ease-in'
+                }}
+                onMouseDown={(e) => {
+                  e.currentTarget.style.border = '2px inset #ddd';
+                  e.currentTarget.style.boxShadow = 'inset 1px 1px 2px rgba(0,0,0,0.2)';
+                }}
+                onMouseUp={(e) => {
+                  e.currentTarget.style.border = '2px outset #ddd';
+                  e.currentTarget.style.boxShadow = '2px 2px 0px rgba(0,0,0,0.2)';
+                }}
+              >
+                Next Clue
+              </button>
+            )}
+          </>
+        ) : (
+          <div style={{ maxWidth: '600px' }}>
+            <div style={{ 
+              fontSize: '20px', 
+              marginBottom: '40px',
+              lineHeight: '1.6',
+              minHeight: '30px'
+            }}>
+              {clueText}
+              {clueText.length > 0 && clueText.length < fullClueText.length && (
+                <span style={{ animation: 'blink 1s infinite' }}>|</span>
+              )}
+            </div>
+            
+            {showHint && (
+              <p style={{ 
+                fontSize: '14px',
+                color: '#666',
+                fontStyle: 'italic',
+                animation: 'fadeIn 0.5s ease-in'
+              }}>
+                You might get your social muscles tired. That's expected.
+              </p>
+            )}
+          </div>
+        )}
+        
+        <style>
+          {`
+            @keyframes blink {
+              0%, 50% { opacity: 1; }
+              51%, 100% { opacity: 0; }
+            }
+            @keyframes fadeIn {
+              from { opacity: 0; transform: translateY(-10px); }
+              to { opacity: 1; transform: translateY(0); }
+            }
+          `}
+        </style>
+      </div>
+    </CodeProtectedPage>
   );
 }
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import CodeProtectedPage from '../components/CodeProtectedPage';
 
 function QR6() {
   const navigate = useNavigate();
@@ -70,17 +71,18 @@ function QR6() {
   };
 
   return (
-    <div style={{ 
-      backgroundColor: 'white',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      minHeight: '100vh',
-      padding: '20px',
-      textAlign: 'center',
-      fontFamily: 'monospace'
-    }}>
+    <CodeProtectedPage requiredCode="j5kj">
+      <div style={{ 
+        backgroundColor: 'white',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '100vh',
+        padding: '20px',
+        textAlign: 'center',
+        fontFamily: 'monospace'
+      }}>
       {!showClue ? (
         <>
           <div style={{ 
@@ -185,7 +187,8 @@ function QR6() {
           }
         `}
       </style>
-    </div>
+      </div>
+    </CodeProtectedPage>
   );
 }
 

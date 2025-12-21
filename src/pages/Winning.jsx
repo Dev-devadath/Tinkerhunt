@@ -106,14 +106,14 @@ function Winning() {
             >
               Affan
             </a>
-            {" and "}
+            {" or "}
             <a
-              href="https://tinkerhub.org/@dev_devadath"
+              href="https://tinkerhub.org/@jake"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "#0066cc", textDecoration: "none" }}
             >
-              Devadath
+              paulin
             </a>
           </span>
         </div>

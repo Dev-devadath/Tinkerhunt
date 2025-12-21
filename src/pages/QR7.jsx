@@ -136,12 +136,12 @@ function QR7() {
             </a>
             {" and "}
             <a
-              href="https://tinkerhub.org/@dev_devadath"
+              href="https://tinkerhub.org/@jake"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "#0066cc", textDecoration: "none" }}
             >
-              Devadath
+              paulyn
             </a>
           </span>
         </div>
